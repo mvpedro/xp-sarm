@@ -1,9 +1,9 @@
 {
-  "name": "supa-next-starter",
-  "description": "A production ready Next.js/Supabase starter. ",
+  "name": "xp-sarm",
+  "description": "X&P - Sistema de Avaliação de Resolutividade Médica | Hackathon DocSolution",
   "version": "1.0.0",
   "private": true,
-  "author": "Michael Troya <hi@michaeltroya.ca> (@michaeltroya)",
+  "author": "Pedro Martins Vieira",
   "license": "MIT",
   "keywords": [
     "nextjs",

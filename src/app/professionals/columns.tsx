@@ -12,39 +12,70 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu'
 
-export type Payment = {
+export type Professional = {
   id: string
-  amount: number
-  status: 'pending' | 'processing' | 'success' | 'failed'
-  email: string
+  email: string | null
+  registration_number: number | null
+  name: string | null
+  role: 'medico' | 'enfermeiro' | 'nutricionista' | 'fisioterapeuta' | null
+  service_quality: number | null
+  knowledge_rating: number | null
+  system_quality: number | null
+  patient_adherence: number | null
+  score: number | null
+  recommendation: 'reeduca' | 'recontrata' | 'desliga' | null
 }
 
-export const columns: ColumnDef<Payment>[] = [
+export const columns: ColumnDef<Professional>[] = [
   {
-    accessorKey: 'status',
-    header: 'Status',
+    accessorKey: 'name',
+    header: 'Nome',
   },
   {
-    accessorKey: 'email',
-    header: 'Email',
+    accessorKey: 'role',
+    header: 'Cargo',
   },
   {
-    accessorKey: 'amount',
-    header: () => <div className="text-right">Amount</div>,
-    cell: ({ row }) => {
-      const amount = parseFloat(row.getValue('amount'))
-      const formatted = new Intl.NumberFormat('en-US', {
-        style: 'currency',
-        currency: 'USD',
-      }).format(amount)
+    accessorKey: 'service_quality',
+    header: 'Qualidade de Atendimento',
+  },
+  {
+    accessorKey: 'knowledge_rating',
+    header: 'Qualidade da Informação',
+  },
+  {
+    accessorKey: 'system_quality',
+    header: 'Qualidade do Sistema',
+  },
+  {
+    accessorKey: 'patient_adherence',
+    header: 'Adesão do Paciente',
+  },
+  {
+    accessorKey: 'score',
+    header: 'Score',
+  },
+  {
+    accessorKey: 'recommendation',
+    header: 'Recomendação',
+  },
+  // {
+  //   accessorKey: 'amount',
+  //   header: () => <div className="text-right">Amount</div>,
+  //   cell: ({ row }) => {
+  //     const amount = parseFloat(row.getValue('amount'))
+  //     const formatted = new Intl.NumberFormat('en-US', {
+  //       style: 'currency',
+  //       currency: 'USD',
+  //     }).format(amount)
 
-      return <div className="text-right font-medium">{formatted}</div>
-    },
-  },
+  //     return <div className="text-right font-medium">{formatted}</div>
+  //   },
+  // },
   {
     id: 'actions',
     cell: ({ row }) => {
-      const payment = row.original
+      const professional = row.original
 
       return (
         <DropdownMenu>
@@ -55,15 +86,17 @@ export const columns: ColumnDef<Payment>[] = [
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end">
-            <DropdownMenuLabel>Actions</DropdownMenuLabel>
+            <DropdownMenuLabel>Ações</DropdownMenuLabel>
             <DropdownMenuItem
-              onClick={() => navigator.clipboard.writeText(payment.id)}
+              onClick={() =>
+                navigator.clipboard.writeText(professional.email || '')
+              }
             >
-              Copy payment ID
+              Copiar Email do Profissional
             </DropdownMenuItem>
             <DropdownMenuSeparator />
-            <DropdownMenuItem>View customer</DropdownMenuItem>
-            <DropdownMenuItem>View payment details</DropdownMenuItem>
+            <DropdownMenuItem>Ver Profissional</DropdownMenuItem>
+            <DropdownMenuItem>Ver Detalhes de Atendimentos</DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
       )

@@ -39,7 +39,7 @@ export default function RootLayout({
           <ReactQueryProvider>
             <main className="flex min-h-screen flex-col items-center">
               <Header />
-              {children}
+              <div className="mx-20">{children}</div>
               <Analytics />{' '}
               {/* ^^ remove this if you are not deploying to vercel. See more at https://vercel.com/docs/analytics  */}
             </main>

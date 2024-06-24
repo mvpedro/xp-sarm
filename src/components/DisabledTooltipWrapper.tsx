@@ -7,13 +7,19 @@ import {
   TooltipTrigger,
 } from '@/components/ui/tooltip'
 
-const DisabledTooltipWrapper = ({ children }) => {
+type DisabledTooltipWrapperProps = React.PropsWithChildren<{}>
+
+const DisabledTooltipWrapper: React.FC<DisabledTooltipWrapperProps> = ({
+  children,
+}) => {
   return (
     <TooltipProvider>
       <Tooltip>
         <TooltipTrigger asChild>
           <div style={{ display: 'inline-block', cursor: 'not-allowed' }}>
-            {React.cloneElement(children, { disabled: true })}
+            {React.cloneElement(children as React.ReactElement, {
+              disabled: true,
+            })}
           </div>
         </TooltipTrigger>
         <TooltipContent>

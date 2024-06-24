@@ -49,22 +49,22 @@ export default async function Index() {
         </h1>
       </div>
       <div className="flex w-full flex-col items-center justify-center gap-4 px-10 md:flex-row md:justify-between md:gap-10">
-        <Link href={'/professional/clock-in'}>
+        <Link href={'/patient/medicine'}>
           <Button variant={'default'} size={'lg'}>
             <Clock className="mr-2 h-5 w-5" /> Seus Tratamentos
           </Button>
         </Link>
-        <Link href={'/professional/services'}>
+        <Link href={'/patient/services'}>
           <Button variant={'default'} size={'lg'}>
             <Briefcase className="mr-2 h-5 w-5" /> Suas Consultas
           </Button>
         </Link>
-        <Link href={'/professional/prescriptions'}>
+        <Link href={'/patient/prescriptions'}>
           <Button variant={'default'} size={'lg'}>
             <Pill className="mr-2 h-5 w-5" /> Suas Receitas
           </Button>
         </Link>
-        <Link href={'/professional/nps'}>
+        <Link href={'/patient/nps'}>
           <Button variant={'default'} size={'lg'}>
             <ClipboardPlus className="mr-2 h-5 w-5" /> Avalie suas Consultas
           </Button>

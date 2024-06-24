@@ -14,6 +14,12 @@ import {
 import { Card } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import Link from 'next/link'
+import {
+  ClipboardPlus,
+  HospitalIcon,
+  LineChart,
+  Stethoscope,
+} from 'lucide-react'
 
 export default async function Index() {
   const cookieStore = cookies()
@@ -33,21 +39,30 @@ export default async function Index() {
 
   return (
     <div className="flex flex-1 flex-col items-center gap-20">
-      Selecione seu perfil:
+      <div className="mx-auto mt-5 max-w-xl text-center">
+        <h1 className="block text-4xl font-bold text-gray-800 dark:text-neutral-200 md:text-5xl lg:text-6xl">
+          Bem vindo, gestor!
+        </h1>
+      </div>
       <div className="flex w-full flex-col items-center justify-center gap-4 px-10 md:flex-row md:justify-between md:gap-10">
-        <Link href={'/professional'}>
-          <Button variant={'default'} size={'lg'} className="px-10 py-5">
-            Médico
+        <Link href={'/organizations'}>
+          <Button variant={'default'} size={'lg'}>
+            <HospitalIcon className="mr-2 h-5 w-5" /> Hospitais
           </Button>
         </Link>
-        <Link href={'/patient'}>
-          <Button variant={'secondary'} size={'lg'} className="px-10 py-5">
-            Paciente
+        <Link href={'/services'}>
+          <Button variant={'default'} size={'lg'}>
+            <ClipboardPlus className="mr-2 h-5 w-5" /> Atendimentos
           </Button>
         </Link>
-        <Link href={'/management'}>
-          <Button variant={'outline'} size={'lg'} className="px-10 py-5">
-            Gestão
+        <Link href={'/professionals'}>
+          <Button variant={'default'} size={'lg'}>
+            <Stethoscope className="mr-2 h-5 w-5" /> Profissionais
+          </Button>
+        </Link>
+        <Link href={'/analytics'}>
+          <Button variant={'default'} size={'lg'}>
+            <LineChart className="mr-2 h-5 w-5" /> Analytics
           </Button>
         </Link>
       </div>

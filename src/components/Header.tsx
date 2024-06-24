@@ -130,7 +130,7 @@ export default function Header() {
             <Tooltip>
               <TooltipTrigger asChild>
                 <Link
-                  href="#"
+                  href="/"
                   className="flex h-9 w-9 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground md:h-8 md:w-8"
                 >
                   <Settings className="h-5 w-5" />
@@ -161,7 +161,7 @@ export default function Header() {
                   <span className="sr-only">Início</span>
                 </Link>
                 <Link
-                  href="#"
+                  href="/"
                   className="flex items-center gap-4 px-2.5 text-muted-foreground hover:text-foreground"
                 >
                   <Home className="h-5 w-5" />

@@ -10,7 +10,7 @@ export default function Medicine() {
             <h3 className="text-lg font-medium">Ibuprofeno</h3>
             <span className="text-muted-foreground">9:00</span>
           </div>
-          <Button variant={true ? 'primary' : 'outline'} className="w-full">
+          <Button variant={'default'} className="w-full">
             {true ? 'Tomou' : 'Tomar Agora'}
           </Button>
         </div>
@@ -19,7 +19,7 @@ export default function Medicine() {
             <h3 className="text-lg font-medium">Vitamina C</h3>
             <span className="text-muted-foreground">12:00</span>
           </div>
-          <Button variant={false ? 'primary' : 'outline'} className="w-full">
+          <Button variant={false ? 'default' : 'outline'} className="w-full">
             {false ? 'Tomou' : 'Tomar Agora'}
           </Button>
         </div>
@@ -28,7 +28,7 @@ export default function Medicine() {
             <h3 className="text-lg font-medium">Metformina</h3>
             <span className="text-muted-foreground">18:00</span>
           </div>
-          <Button variant={false ? 'primary' : 'outline'} className="w-full">
+          <Button variant={false ? 'default' : 'outline'} className="w-full">
             {false ? 'Tomou' : 'Tomar Agora'}
           </Button>
         </div>

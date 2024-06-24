@@ -24,6 +24,7 @@ import {
   Stethoscope,
   Users,
 } from 'lucide-react'
+import DisabledTooltipWrapper from '@/components/DisabledTooltipWrapper'
 
 export default async function Index() {
   const cookieStore = cookies()
@@ -54,21 +55,27 @@ export default async function Index() {
             <Clock className="mr-2 h-5 w-5" /> Seus Tratamentos
           </Button>
         </Link>
-        <Link href={'/patient/services'}>
-          <Button variant={'default'} size={'lg'}>
-            <Briefcase className="mr-2 h-5 w-5" /> Suas Consultas
-          </Button>
-        </Link>
-        <Link href={'/patient/prescriptions'}>
-          <Button variant={'default'} size={'lg'}>
-            <Pill className="mr-2 h-5 w-5" /> Suas Receitas
-          </Button>
-        </Link>
-        <Link href={'/patient/nps'}>
-          <Button variant={'default'} size={'lg'}>
-            <ClipboardPlus className="mr-2 h-5 w-5" /> Avalie suas Consultas
-          </Button>
-        </Link>
+        <DisabledTooltipWrapper>
+          <Link href={'/patient/services'}>
+            <Button variant={'default'} size={'lg'} disabled>
+              <Briefcase className="mr-2 h-5 w-5" /> Suas Consultas
+            </Button>
+          </Link>
+        </DisabledTooltipWrapper>
+        <DisabledTooltipWrapper>
+          <Link href={'/patient/prescriptions'}>
+            <Button variant={'default'} size={'lg'} disabled>
+              <Pill className="mr-2 h-5 w-5" /> Suas Receitas
+            </Button>
+          </Link>
+        </DisabledTooltipWrapper>
+        <DisabledTooltipWrapper>
+          <Link href={'/patient/nps'}>
+            <Button variant={'default'} size={'lg'} disabled>
+              <ClipboardPlus className="mr-2 h-5 w-5" /> Avalie suas Consultas
+            </Button>
+          </Link>
+        </DisabledTooltipWrapper>
       </div>
       <footer className="justify-center border-t border-t-foreground/10 p-8 text-center text-xs">
         <p className="mb-6">

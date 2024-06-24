@@ -24,6 +24,7 @@ import {
   Stethoscope,
   Users,
 } from 'lucide-react'
+import DisabledTooltipWrapper from '@/components/DisabledTooltipWrapper'
 
 export default async function Index() {
   const cookieStore = cookies()
@@ -101,27 +102,34 @@ export default async function Index() {
             <Clock className="mr-2 h-5 w-5" /> Registrar Entrada
           </Button>
         </Link>
-        <Link href={'/professional/services'}>
-          <Button variant={'default'} size={'lg'}>
-            <Briefcase className="mr-2 h-5 w-5" /> Registrar Atendimento
-          </Button>
-        </Link>
-        <Link href={'/professional/prescriptions'}>
-          <Button variant={'default'} size={'lg'}>
-            <Pill className="mr-2 h-5 w-5" /> Minhas Receitas
-          </Button>
-        </Link>
-        <Link href={'/professional/history'}>
-          <Button variant={'default'} size={'lg'}>
-            <ClipboardPlus className="mr-2 h-5 w-5" /> Meus Atendimentos
-          </Button>
-        </Link>
-
-        <Link href={'/professional/patients'}>
-          <Button variant={'default'} size={'lg'}>
-            <Users className="mr-2 h-5 w-5" /> Meus Pacientes
-          </Button>
-        </Link>
+        <DisabledTooltipWrapper>
+          <Link href={'/professional/services'}>
+            <Button variant={'default'} size={'lg'} disabled>
+              <Briefcase className="mr-2 h-5 w-5" /> Registrar Atendimento
+            </Button>
+          </Link>
+        </DisabledTooltipWrapper>
+        <DisabledTooltipWrapper>
+          <Link href={'/professional/prescriptions'}>
+            <Button variant={'default'} size={'lg'} disabled>
+              <Pill className="mr-2 h-5 w-5" /> Minhas Receitas
+            </Button>
+          </Link>
+        </DisabledTooltipWrapper>
+        <DisabledTooltipWrapper>
+          <Link href={'/professional/history'}>
+            <Button variant={'default'} size={'lg'} disabled>
+              <ClipboardPlus className="mr-2 h-5 w-5" /> Meus Atendimentos
+            </Button>
+          </Link>
+        </DisabledTooltipWrapper>
+        <DisabledTooltipWrapper>
+          <Link href={'/professional/patients'}>
+            <Button variant={'default'} size={'lg'} disabled>
+              <Users className="mr-2 h-5 w-5" /> Meus Pacientes
+            </Button>
+          </Link>
+        </DisabledTooltipWrapper>
       </div>
       <footer className="justify-center border-t border-t-foreground/10 p-8 text-center text-xs">
         <p className="mb-6">

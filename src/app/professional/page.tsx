@@ -15,10 +15,14 @@ import { Card } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import Link from 'next/link'
 import {
+  Briefcase,
   ClipboardPlus,
+  Clock,
   HospitalIcon,
   LineChart,
+  Pill,
   Stethoscope,
+  Users,
 } from 'lucide-react'
 
 export default async function Index() {
@@ -41,28 +45,81 @@ export default async function Index() {
     <div className="flex flex-1 flex-col items-center gap-20">
       <div className="mx-auto mt-5 max-w-xl text-center">
         <h1 className="block text-4xl font-bold text-gray-800 dark:text-neutral-200 md:text-5xl lg:text-6xl">
-          Bem vindo, gestor!
+          Bem vindo!
         </h1>
       </div>
+
+      <div className="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
+        <div className="grid grid-cols-2 gap-6 sm:gap-12 lg:grid-cols-3 lg:gap-8">
+          <div>
+            <h4 className="text-lg font-semibold text-gray-800 dark:text-neutral-200 sm:text-xl">
+              Seu NPS
+            </h4>
+            <p className="mt-2 text-4xl font-bold text-green-600 sm:mt-3 sm:text-6xl">
+              80.0
+            </p>
+            <p className="mt-1 text-gray-500 dark:text-neutral-500">
+              Seus pacientes estão
+            </p>
+            <p className="mt-1 text-gray-500 dark:text-neutral-500">
+              lhe recomendando!
+            </p>
+          </div>
+
+          <div>
+            <h4 className="text-lg font-semibold text-gray-800 dark:text-neutral-200 sm:text-xl">
+              Atendimentos
+            </h4>
+            <p className="mt-2 text-4xl font-bold text-green-600 sm:mt-3 sm:text-6xl">
+              37
+            </p>
+            <p className="mt-1 text-gray-500 dark:text-neutral-500">
+              Nos últimos 7 dias
+            </p>
+          </div>
+
+          <div>
+            <h4 className="text-lg font-semibold text-gray-800 dark:text-neutral-200 sm:text-xl">
+              Aderência de Tratamento
+            </h4>
+            <p className="mt-2 text-4xl font-bold text-green-600 sm:mt-3 sm:text-6xl">
+              85%
+            </p>
+            <p className="mt-1 text-gray-500 dark:text-neutral-500">
+              de seus pacientes estão
+            </p>
+            <p className="mt-1 text-gray-500 dark:text-neutral-500">
+              aderindo ao tratamento
+            </p>
+          </div>
+        </div>
+      </div>
+
       <div className="flex w-full flex-col items-center justify-center gap-4 px-10 md:flex-row md:justify-between md:gap-10">
-        <Link href={'/management/organizations'}>
+        <Link href={'/professional/clock-in'}>
           <Button variant={'default'} size={'lg'}>
-            <HospitalIcon className="mr-2 h-5 w-5" /> Hospitais
+            <Clock className="mr-2 h-5 w-5" /> Registrar Entrada
           </Button>
         </Link>
-        <Link href={'/management/services'}>
+        <Link href={'/professional/services'}>
           <Button variant={'default'} size={'lg'}>
-            <ClipboardPlus className="mr-2 h-5 w-5" /> Atendimentos
+            <Briefcase className="mr-2 h-5 w-5" /> Registrar Atendimento
           </Button>
         </Link>
-        <Link href={'/management/professionals'}>
+        <Link href={'/professional/prescriptions'}>
           <Button variant={'default'} size={'lg'}>
-            <Stethoscope className="mr-2 h-5 w-5" /> Profissionais
+            <Pill className="mr-2 h-5 w-5" /> Minhas Receitas
           </Button>
         </Link>
-        <Link href={'/management/analytics'}>
+        <Link href={'/professional/history'}>
           <Button variant={'default'} size={'lg'}>
-            <LineChart className="mr-2 h-5 w-5" /> Analytics
+            <ClipboardPlus className="mr-2 h-5 w-5" /> Meus Atendimentos
+          </Button>
+        </Link>
+
+        <Link href={'/professional/patients'}>
+          <Button variant={'default'} size={'lg'}>
+            <Users className="mr-2 h-5 w-5" /> Meus Pacientes
           </Button>
         </Link>
       </div>

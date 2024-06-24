@@ -15,10 +15,14 @@ import { Card } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import Link from 'next/link'
 import {
+  Briefcase,
   ClipboardPlus,
+  Clock,
   HospitalIcon,
   LineChart,
+  Pill,
   Stethoscope,
+  Users,
 } from 'lucide-react'
 
 export default async function Index() {
@@ -41,28 +45,28 @@ export default async function Index() {
     <div className="flex flex-1 flex-col items-center gap-20">
       <div className="mx-auto mt-5 max-w-xl text-center">
         <h1 className="block text-4xl font-bold text-gray-800 dark:text-neutral-200 md:text-5xl lg:text-6xl">
-          Bem vindo, gestor!
+          Bem vindo!
         </h1>
       </div>
       <div className="flex w-full flex-col items-center justify-center gap-4 px-10 md:flex-row md:justify-between md:gap-10">
-        <Link href={'/management/organizations'}>
+        <Link href={'/professional/clock-in'}>
           <Button variant={'default'} size={'lg'}>
-            <HospitalIcon className="mr-2 h-5 w-5" /> Hospitais
+            <Clock className="mr-2 h-5 w-5" /> Seus Tratamentos
           </Button>
         </Link>
-        <Link href={'/management/services'}>
+        <Link href={'/professional/services'}>
           <Button variant={'default'} size={'lg'}>
-            <ClipboardPlus className="mr-2 h-5 w-5" /> Atendimentos
+            <Briefcase className="mr-2 h-5 w-5" /> Suas Consultas
           </Button>
         </Link>
-        <Link href={'/management/professionals'}>
+        <Link href={'/professional/prescriptions'}>
           <Button variant={'default'} size={'lg'}>
-            <Stethoscope className="mr-2 h-5 w-5" /> Profissionais
+            <Pill className="mr-2 h-5 w-5" /> Suas Receitas
           </Button>
         </Link>
-        <Link href={'/management/analytics'}>
+        <Link href={'/professional/nps'}>
           <Button variant={'default'} size={'lg'}>
-            <LineChart className="mr-2 h-5 w-5" /> Analytics
+            <ClipboardPlus className="mr-2 h-5 w-5" /> Avalie suas Consultas
           </Button>
         </Link>
       </div>

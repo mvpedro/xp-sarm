@@ -5,6 +5,12 @@ import Header from '@/components/Header'
 import { cookies } from 'next/headers'
 import { createServerClient } from '@/utils/supabase'
 import ThemeToggle from '@/components/ThemeToggle'
+import {
+  Tooltip,
+  TooltipProvider,
+  TooltipTrigger,
+  TooltipContent,
+} from '@/components/ui/tooltip'
 
 export default async function Index() {
   const cookieStore = cookies()
@@ -24,7 +30,7 @@ export default async function Index() {
 
   return (
     <div className="flex flex-1 flex-col items-center gap-20">
-      <nav className="flex h-16 justify-center border-b border-b-foreground/10">
+      {/* <nav className="flex h-16 justify-center border-b border-b-foreground/10">
         <div className="flex items-center justify-between p-3 text-sm">
           {isSupabaseConnected && <AuthButton />}
         </div>
@@ -36,21 +42,23 @@ export default async function Index() {
           <h2 className="mb-4 text-4xl font-bold">Next steps</h2>
           {isSupabaseConnected ? <SignUpUserSteps /> : <ConnectSupabaseSteps />}
         </main>
-      </div>
-
-      <footer className=" justify-center border-t border-t-foreground/10 p-8 text-center text-xs">
+      </div> */}
+      asdasdsa
+      <footer className="justify-center border-t border-t-foreground/10 p-8 text-center text-xs">
         <p className="mb-6">
-          Powered by{' '}
-          <a
-            href="https://supabase.com/?utm_source=create-next-app&utm_medium=template&utm_term=nextjs"
-            target="_blank"
-            className="font-bold hover:underline"
-            rel="noreferrer"
-          >
-            Supabase
-          </a>
+          Powered by
+          <TooltipProvider>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <span className="ml-1 cursor-pointer underline">X&P</span>
+              </TooltipTrigger>
+              <TooltipContent>
+                <p>Ximira & Peixola Advogados Associados</p>
+              </TooltipContent>
+            </Tooltip>
+          </TooltipProvider>
         </p>
-        <ThemeToggle />
+        {/* <ThemeToggle /> */}
       </footer>
     </div>
   )
